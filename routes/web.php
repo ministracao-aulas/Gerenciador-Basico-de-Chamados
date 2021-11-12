@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return redirect()->route('demo_index');
+});
+Route::prefix('demo')->group(function () {
+    App\Http\Controllers\Admin\DemoDashboardController::routes();
 });
