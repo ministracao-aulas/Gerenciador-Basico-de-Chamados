@@ -14,7 +14,7 @@
                             placeholder="Password">
                     </div>
                     <div class="mt-5">
-                        <a class="btn btn-block btn-success btn-lg font-weight-medium" href="{{ url('/') }}">Unlock</a>
+                        <a class="btn btn-block btn-success btn-lg font-weight-medium" href="{{ url('/demo/') }}">Unlock</a>
                     </div>
                     <div class="mt-3 text-center">
                         <a href="#" class="auth-link text-white">Sign in using a different account</a>

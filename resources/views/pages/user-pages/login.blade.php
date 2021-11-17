@@ -44,7 +44,7 @@
           </div>
           <div class="text-block text-center my-3">
             <span class="text-small font-weight-semibold">Not a member ?</span>
-            <a href="{{ url('/user-pages/register') }}" class="text-black text-small">Create new account</a>
+            <a href="{{ url('/demo/user-pages/register') }}" class="text-black text-small">Create new account</a>
           </div>
         </form>
       </div>
