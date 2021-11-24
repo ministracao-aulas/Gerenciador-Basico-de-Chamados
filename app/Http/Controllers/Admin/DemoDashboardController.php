@@ -14,7 +14,7 @@ class DemoDashboardController extends Controller
         Route::get('/', function ()
         {
             return view('dashboard');
-        })->name('demo_index');
+        })->name('demo_dashboard');
 
         // Route::get('/','DashboardController@index');
 

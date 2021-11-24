@@ -11,9 +11,12 @@
         "laravel/framework": "^8.65",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "laravelcollective/html": "^6.2"
+        "laravel/ui": "^3.3",
+        "laravelcollective/html": "^6.2",
+        "rezaamini-ir/laravel-easyblade": "^0.3.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
