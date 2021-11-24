@@ -1,20 +1,13 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth');
+
 Route::get('/', function() {
-    return redirect()->route('demo_index');
+    return redirect()->route('demo_dashboard');
 });
 Route::prefix('demo')->group(function () {
     App\Http\Controllers\Admin\DemoDashboardController::routes();
