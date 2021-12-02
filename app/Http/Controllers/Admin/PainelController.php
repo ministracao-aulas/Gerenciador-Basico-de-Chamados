@@ -10,9 +10,8 @@ class PainelController extends Controller
 {
     public static function routes()
     {
-        Route::group(['prefix' => 'painel', 'middleware' => 'auth'], function () {
-            Route::get('/', [self::class, 'index']);
-        });
+        Route::get('/', [self::class, 'index'])->name('painel.index');
+        Route::get('/blank', [self::class, 'blank'])->name('painel.blank');
     }
 
     /**
@@ -27,5 +26,16 @@ class PainelController extends Controller
             'estoque' => 40,
             'estoque_minimo' => 25,
         ]);
+    }
+
+    /**
+     * function blank
+     *
+     * @param Request $request
+     * @return
+     */
+    public function blank(Request $request)
+    {
+        return view('admin.blank-page');
     }
 }

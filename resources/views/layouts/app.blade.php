@@ -1,3 +1,4 @@
+@inject('session_preferences', 'App\Http\Controllers\SessionPreferences')
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="_token" content="{{ csrf_token() }}">
+    <meta name="_token" content="{{ $csrf_token = csrf_token() }}">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ $csrf_token }}">
 
     <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
 
@@ -26,7 +30,10 @@
     @stack('style')
 </head>
 
-<body data-base-url="{{url('/demo/')}}">
+<body
+    class="{{ !$session_preferences->getPreference('sidebar_opened') ? 'sidebar-icon-only' : '' }}"
+    data-base-url="{{route('painel.index')}}"
+>
 
     <div class="container-scroller" id="app">
         @include('layouts.header')
@@ -59,6 +66,34 @@
     <!-- end common js -->
 
     @stack('custom-scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener("toogle-sidebar", (e) => {
+                // fetch("?key=sidebar_opened&value=false")
+
+                    const url = "{{ route('admin.session-preferences.put') }}";
+                    let data = {
+                        key: 'sidebar_opened',
+                        value: e.detail.sidebar_opened,
+                        _token: "{{ $csrf_token }}"
+                    }
+
+                    let fetchData = {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                        }
+                    }
+
+                    fetch(url, fetchData)
+                        .then(request => request.json())
+                        .then(request => console.log(request))
+                        .catch(err => {})
+            });
+        });
+    </script>
 </body>
 
 </html>

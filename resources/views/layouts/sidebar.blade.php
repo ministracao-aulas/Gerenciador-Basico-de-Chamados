@@ -39,16 +39,32 @@
                 </div>
 
                 <a href="#" class="nav-link">
-                    <x-button-bs content="Novo chamado" rightIcon="plus" color="primary"/>
+                    <x-button-bs content="Novo chamado" rightIcon="plus" color="primary" />
                 </a>
             </div>
         </li>
+
         <li class="nav-item {{ active_class(['/']) }}">
-            <a class="nav-link" href="{{ url('/demo/') }}">
+            <a class="nav-link" href="{{ route('painel.index') }}">
                 <i class="menu-icon mdi mdi-television"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
+
+        <li class="nav-item {{ active_class(['/']) }}">
+            <a class="nav-link" href="{{ route('painel.blank') }}">
+                <i class="menu-icon mdi mdi-television"></i>
+                <span class="menu-title">Blank page</span>
+            </a>
+        </li>
+
+        <li class="nav-item {{ active_class(['/']) }}">
+            <a class="nav-link" href="{{ route('chamados.index') }}">
+                <i class="menu-icon mdi mdi-receipt"></i>
+                <span class="menu-title">Chamados</span>
+            </a>
+        </li>
+
         <li class="nav-item {{ active_class(['basic-ui/*']) }}">
             <a class="nav-link" data-toggle="collapse" href="#basic-ui"
                 aria-expanded="{{ is_active_route(['basic-ui/*']) }}" aria-controls="basic-ui">
@@ -77,18 +93,21 @@
                 <span class="menu-title">Charts</span>
             </a>
         </li>
+
         <li class="nav-item {{ active_class(['tables/basic-table']) }}">
             <a class="nav-link" href="{{ url('/demo/tables/basic-table') }}">
                 <i class="menu-icon mdi mdi-table-large"></i>
                 <span class="menu-title">Tables</span>
             </a>
         </li>
+
         <li class="nav-item {{ active_class(['icons/material']) }}">
             <a class="nav-link" href="{{ url('/demo/icons/material') }}">
                 <i class="menu-icon mdi mdi-emoticon"></i>
                 <span class="menu-title">Icons</span>
             </a>
         </li>
+
         <li class="nav-item {{ active_class(['user-pages/*']) }}">
             <a class="nav-link" data-toggle="collapse" href="#user-pages"
                 aria-expanded="{{ is_active_route(['user-pages/*']) }}" aria-controls="user-pages">
@@ -110,6 +129,7 @@
                 </ul>
             </div>
         </li>
+
         <li class="nav-item">
             <a class="nav-link"
                 href="https://www.bootstrapdash.com/demo/star-laravel-free/documentation/documentation.html"
