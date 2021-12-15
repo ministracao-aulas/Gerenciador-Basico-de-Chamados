@@ -10,25 +10,36 @@
             <span class="mdi mdi-menu"></span>
         </button>
         <ul class="navbar-nav navbar-nav-left header-links">
-            <li class="nav-item d-none d-xl-flex">
-                <a href="#" class="nav-link">Schedule <span class="badge badge-primary ml-1">New</span>
+            <li class="nav-item d-none d-xl-flex @isActive('painel.index', 'active', '')">
+                <a href="{{ route('painel.index') }}" class="nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i>
+                    Dashboard
                 </a>
             </li>
-            <li class="nav-item active d-none d-lg-flex">
+            <li class="nav-item d-none d-lg-flex">
                 <a href="#" class="nav-link">
-                    <i class="mdi mdi-elevation-rise"></i>Reports</a>
+                    <i class="mdi mdi-elevation-rise"></i>
+                    Reports
+                </a>
             </li>
             <li class="nav-item d-none d-md-flex">
                 <a href="#" class="nav-link">
-                    <i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
+                    <i class="mdi mdi-bookmark-plus-outline"></i>
+                    Score
+                </a>
+            </li>
+            <li class="nav-item d-none d-md-flex">
+                <a href="#" class="nav-link">
+                    <i class="mdi mdi-bookmark-plus-outline"></i>
+                    Novo chamado
+                </a>
             </li>
             <li class="nav-item dropdown d-none d-lg-flex">
                 <a class="nav-link dropdown-toggle px-0" id="quickDropdown" href="#" data-toggle="dropdown"
-                    aria-expanded="false"> Quick Links </a>
+                    aria-expanded="false"><i class="mdi mdi-elevation-rise"></i> Relatórios
+                </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown pt-3" aria-labelledby="quickDropdown">
-                    <a href="#" class="dropdown-item">Schedule <span class="badge badge-primary ml-1">New</span></a>
-                    <a href="#" class="dropdown-item"><i class="mdi mdi-elevation-rise"></i>Reports</a>
-                    <a href="#" class="dropdown-item"><i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
+                    <a href="#" class="dropdown-item"><i class="mdi mdi-ticket-outline"></i> Chamados</a>
                 </div>
             </li>
         </ul>
@@ -122,9 +133,12 @@
             <li class="nav-item dropdown d-none d-xl-inline-block">
                 <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
                     aria-expanded="false">
-                    <span class="profile-text d-none d-md-inline-flex">Richard V.Welsh !</span>
+                    @auth
+                    <span class="profile-text d-none d-md-inline-flex">@user('name')</span>
+                    @endauth
                     <img class="img-xs rounded-circle" src="{{ url('assets/images/faces/face8.jpg') }}"
-                        alt="Profile image"> </a>
+                        alt="Profile image">
+                </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                     <a class="dropdown-item p-0">
                         <div class="d-flex border-bottom w-100 justify-content-center">
@@ -140,10 +154,10 @@
                             </div>
                         </div>
                     </a>
-                    <a class="dropdown-item mt-2"> Manage Accounts </a>
-                    <a class="dropdown-item"> Change Password </a>
-                    <a class="dropdown-item"> Check Inbox </a>
-                    <a class="dropdown-item"> Sign Out </a>
+                    <a class="dropdown-item mt-2" href="#"> Manage Accounts </a>
+                    <a class="dropdown-item" href="#"> Change Password </a>
+                    <a class="dropdown-item" href="#"> Check Inbox </a>
+                    <a class="dropdown-item" href="@route('logout')"> @lang('Logout') </a>
                 </div>
             </li>
         </ul>

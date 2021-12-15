@@ -44,21 +44,21 @@
             </div>
         </li>
 
-        <li class="nav-item {{ active_class(['/']) }}">
+        <li class="nav-item @isActive('painel.index', 'active', '')">
             <a class="nav-link" href="{{ route('painel.index') }}">
-                <i class="menu-icon mdi mdi-television"></i>
+                <i class="menu-icon mdi mdi-view-dashboard-outline"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
 
-        <li class="nav-item {{ active_class(['/']) }}">
+        <li class="nav-item {{ active_class(['/']) }} @isActive('painel.blank', 'active', '')">
             <a class="nav-link" href="{{ route('painel.blank') }}">
                 <i class="menu-icon mdi mdi-television"></i>
                 <span class="menu-title">Blank page</span>
             </a>
         </li>
 
-        <li class="nav-item {{ active_class(['/']) }}">
+        <li class="nav-item {{ active_class(['/']) }} @isActive('chamados.index', 'active', '')">
             <a class="nav-link" href="{{ route('chamados.index') }}">
                 <i class="menu-icon mdi mdi-receipt"></i>
                 <span class="menu-title">Chamados</span>

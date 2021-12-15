@@ -25,6 +25,7 @@
 
     <!-- common css -->
     {!! Html::style('css/app.css') !!}
+    {!! Html::style('css/all.css') !!}
     <!-- end common css -->
 
     @stack('style')
