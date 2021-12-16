@@ -13,7 +13,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
         "laravelcollective/html": "^6.2",
-        "rezaamini-ir/laravel-easyblade": "^0.3.0"
+        "rezaamini-ir/laravel-easyblade": "^0.3.0",
+        "spatie/laravel-permission": "^5.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
