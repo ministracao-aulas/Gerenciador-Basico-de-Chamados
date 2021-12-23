@@ -20,7 +20,7 @@ Route::get('/logout',   [LoginController::class, 'logout'])->middleware('auth');
 
 Route::group([
     'prefix' => 'painel',
-    'middleware' => 'auth',
+    'middleware' => ['auth', 'UserHasAnyRole'],
 ], function () {
     App\Http\Controllers\Admin\PainelController::routes();
     App\Http\Controllers\Admin\ChamadosController::routes();
