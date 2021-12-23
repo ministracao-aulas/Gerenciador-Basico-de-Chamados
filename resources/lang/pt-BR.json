@@ -86,5 +86,7 @@
     "Inactivate": "Inativar",
     "Delete": "Excluir",
     "See all": "Ver todos",
-    "Update": "Atualizar"
+    "Update": "Atualizar",
+    "Contact the administrator.": "Entre em contato com o administrador.",
+    "User without role. Contact the administrator.": "Usuário sem permissão. Entre em contato com o administrador."
 }

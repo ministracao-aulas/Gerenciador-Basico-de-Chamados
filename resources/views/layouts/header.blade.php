@@ -28,12 +28,16 @@
                     Score
                 </a>
             </li>
-            <li class="nav-item d-none d-md-flex">
-                <a href="#" class="nav-link">
-                    <i class="mdi mdi-bookmark-plus-outline"></i>
-                    Novo chamado
-                </a>
-            </li>
+
+            @canany(['chamados-create', 'chamados-all'])
+                <li class="nav-item d-none d-md-flex">
+                    <a href="#" class="nav-link">
+                        <i class="mdi mdi-bookmark-plus-outline"></i>
+                        Novo chamado
+                    </a>
+                </li>
+            @endcanany
+
             <li class="nav-item dropdown d-none d-lg-flex">
                 <a class="nav-link dropdown-toggle px-0" id="quickDropdown" href="#" data-toggle="dropdown"
                     aria-expanded="false"><i class="mdi mdi-elevation-rise"></i> Relatórios

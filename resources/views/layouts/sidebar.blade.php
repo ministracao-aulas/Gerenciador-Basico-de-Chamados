@@ -38,9 +38,11 @@
                     </div>
                 </div>
 
+                @canany(['chamados-create', 'chamados-all'])
                 <a href="#" class="nav-link">
                     <x-button-bs content="Novo chamado" rightIcon="plus" color="primary" />
                 </a>
+                @endcanany
             </div>
         </li>
 
